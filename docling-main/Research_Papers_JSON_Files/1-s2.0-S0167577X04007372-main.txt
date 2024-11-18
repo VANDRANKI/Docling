@@ -1,0 +1,111 @@
+{
+  "text": "In the present study, nano-sized ceria powders were prepared by the two-emulsion method in the presence of aqueous sodium hydroxide. The effect of the ceria precursor concentration and the addition of an aqueous sodium hydroxide on the crystallite size, the size distribution, and the morphology of the synthesized powders were investigated.",
+  "output": {
+    "materials": {
+      "precursors": [
+        {"name": "Ceria", "formula": "CeO2"},
+        {"name": "Sodium Hydroxide", "formula": "NaOH"}
+      ]
+    },
+    "actions": [
+      {
+        "step": 1,
+        "action": "Synthesis",
+        "description": "Synthesized nano-sized ceria powders using the two-emulsion method in the presence of aqueous sodium hydroxide."
+      }
+    ],
+    "outcomes": {
+      "crystallite_size": "Varied based on ceria precursor concentration and NaOH addition",
+      "size_distribution": "Controlled",
+      "morphology": "Varied with experimental conditions"
+    }
+  }
+},
+{
+  "text": "The synthesized ceria powders had nearly spherical shape and a uniform crystallite size in a range of 10 to 20 nm depending on the concentration of precursor solution and the addition amount of mineralizer.",
+  "output": {
+    "materials": {
+      "precursors": [
+        {"name": "Ceria", "formula": "CeO2"}
+      ],
+      "additives": [
+        {"name": "Sodium Hydroxide", "role": "Mineralizer"}
+      ]
+    },
+    "outcomes": {
+      "particle_size": "10-20 nm",
+      "morphology": "Nearly spherical",
+      "crystallite_size": "Uniform"
+    }
+  }
+},
+{
+  "text": "The ceria precipitates were dried between 70 and 80°C for 24 hours. The light-yellow ceria powders were obtained by calcination at 700°C for 10 minutes. The concentration of cerium nitrate precursor was varied from 1 to 4 M, and the content of sodium hydroxide was changed 8 to 12 of the molar ratio of sodium hydroxide to cerium ion.",
+  "output": {
+    "materials": {
+      "precursors": [
+        {"name": "Ceria", "formula": "CeO2"},
+        {"name": "Sodium Hydroxide", "formula": "NaOH"}
+      ]
+    },
+    "actions": [
+      {
+        "step": 2,
+        "action": "Drying and Calcination",
+        "description": "Dried ceria precipitates at 70-80°C for 24 hours and calcined at 700°C for 10 minutes."
+      }
+    ],
+    "conditions": {
+      "temperature": "70–80°C (drying), 700°C (calcination)",
+      "time": "24 hours (drying), 10 minutes (calcination)"
+    },
+    "outcomes": {
+      "particle_size": "Varied with concentration of precursors",
+      "molar_ratio_effect": "Significant for morphology and size"
+    }
+  }
+},
+{
+  "text": "The ceria particles were analyzed by X-ray diffraction (XRD) and transmission electron microscopy (TEM). XRD showed a crystallite size of 17–20 nm, and TEM confirmed a spherical morphology with narrow size distribution.",
+  "output": {
+    "materials": {
+      "precursors": [
+        {"name": "Ceria", "formula": "CeO2"}
+      ]
+    },
+    "actions": [
+      {
+        "step": 3,
+        "action": "Characterization",
+        "description": "Analyzed ceria particles using XRD and TEM."
+      }
+    ],
+    "outcomes": {
+      "crystallite_size": "17-20 nm",
+      "morphology": "Spherical",
+      "size_distribution": "Narrow"
+    }
+  }
+},
+{
+  "text": "The influence of surfactants, such as Span 80 and isopropyl alcohol, on the size and morphology of ceria nanoparticles was also studied. Surfactants were found to stabilize the emulsion system and control the size distribution of the particles.",
+  "output": {
+    "materials": {
+      "additives": [
+        {"name": "Span 80", "role": "Surfactant"},
+        {"name": "Isopropyl Alcohol", "role": "Co-surfactant"}
+      ]
+    },
+    "actions": [
+      {
+        "step": 4,
+        "action": "Emulsion Stabilization",
+        "description": "Studied the effect of surfactants on particle size and morphology."
+      }
+    ],
+    "outcomes": {
+      "size_distribution": "Controlled",
+      "morphology": "Stabilized by surfactants"
+    }
+  }
+}

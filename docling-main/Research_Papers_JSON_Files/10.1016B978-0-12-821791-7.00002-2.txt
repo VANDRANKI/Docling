@@ -1,0 +1,82 @@
+{
+  "text": "CMP slurries are formulated with a combination of abrasive particles and chemical additives. As the name implies, the abrasive particles provide a mechanical scouring action that helps remove material from the surface of the wafer. With few exceptions, the abrasive particles are comprised of alumina, ceria, or amorphous silica (Al2O3, CeO2, SiO2). Depending on the particular application, the size of the abrasive particles may be from approximately 10 to 200 nm, but typically fall within a narrow normally distributed range.",
+  "output": {
+    "materials": {
+      "precursors": [
+        {"name": "Alumina", "formula": "Al2O3"},
+        {"name": "Ceria", "formula": "CeO2"},
+        {"name": "Silica", "formula": "SiO2"}
+      ]
+    },
+    "actions": [
+      {
+        "step": 1,
+        "action": "Formulation",
+        "description": "Combined abrasive particles and chemical additives to formulate CMP slurries."
+      }
+    ],
+    "outcomes": {
+      "particle_size_range": "10-200 nm",
+      "distribution": "Narrow, normally distributed"
+    }
+  }
+},
+{
+  "text": "The synthesized ceria particles were analyzed by X-ray diffraction (XRD) and transmission electron microscopy (TEM). XRD showed a crystallite size of 17–20 nm, and TEM confirmed a spherical morphology with narrow size distribution.",
+  "output": {
+    "materials": {
+      "precursors": [
+        {"name": "Ceria", "formula": "CeO2"}
+      ]
+    },
+    "actions": [
+      {
+        "step": 2,
+        "action": "Characterization",
+        "description": "Analyzed ceria particles using XRD and TEM."
+      }
+    ],
+    "outcomes": {
+      "crystallite_size": "17-20 nm",
+      "morphology": "Spherical",
+      "distribution": "Narrow"
+    }
+  }
+},
+{
+  "text": "The addition of chemical coagulants was employed to destabilize particle dispersions in CMP wastewater. Flocculation was applied to aggregate destabilized particles, forming larger flocs suitable for sedimentation and removal.",
+  "output": {
+    "actions": [
+      {
+        "step": 3,
+        "action": "Coagulation and Flocculation",
+        "description": "Applied coagulants to destabilize particles and aggregated them through flocculation."
+      }
+    ],
+    "outcomes": {
+      "particle_stability": "Destabilized",
+      "floc_size": "Increased for sedimentation"
+    }
+  }
+},
+{
+  "text": "The effluent wastewater from a CMP tool contains dissolved and particulate material that has been removed from the wafer, as well as the waste slurry components, associated rinse waters, and residual materials from the pads and pad conditioning.",
+  "output": {
+    "materials": {
+      "effluent_components": [
+        {"type": "Dissolved material", "source": "Wafer"},
+        {"type": "Particulate material", "source": "CMP tool"}
+      ]
+    },
+    "actions": [
+      {
+        "step": 4,
+        "action": "Effluent Characterization",
+        "description": "Analyzed wastewater components from CMP tools."
+      }
+    ],
+    "outcomes": {
+      "effluent_composition": "Dissolved and particulate materials with waste slurry components"
+    }
+  }
+}
