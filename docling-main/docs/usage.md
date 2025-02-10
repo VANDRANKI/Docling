@@ -13,6 +13,42 @@ result = converter.convert(source)
 print(result.document.export_to_markdown())  # output: "### Docling Technical Report[...]"
 ```
 
+### Batch Processing
+
+Docling provides a powerful batch processing utility for converting multiple documents at once. Here's how to use it:
+
+```python
+from docling.utils.batch_processor import BatchProcessor
+from docling.document_converter import DocumentConverter
+
+# Create a converter with your desired options
+converter = DocumentConverter()
+
+# Initialize the batch processor
+processor = BatchProcessor(converter)
+
+# Process all PDF files in a directory
+successful, failed = processor.process_directory(
+    input_dir="path/to/input/dir",
+    output_dir="path/to/output/dir",
+    file_pattern="*.pdf",     # Process PDF files
+    export_format="json",     # Export as JSON (or "markdown")
+    metadata={"project": "research_papers"}  # Optional metadata
+)
+
+print(f"Successfully processed: {successful} files")
+print(f"Failed to process: {failed} files")
+```
+
+The batch processor supports:
+- Processing multiple files with a single command
+- Custom file pattern matching (e.g., "*.pdf", "*.docx")
+- Export to JSON or Markdown formats
+- Custom metadata inclusion
+- Detailed logging of the conversion process
+
+For a complete example, see [batch_processing.py](./examples/batch_processing.py).
+
 ### CLI
 
 You can also use Docling directly from your command line to convert individual files —be it local or by URL— or whole directories.
