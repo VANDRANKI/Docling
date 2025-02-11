@@ -15,7 +15,9 @@ print(result.document.export_to_markdown())  # output: "### Docling Technical Re
 
 ### Batch Processing
 
-Docling provides a powerful batch processing utility for converting multiple documents at once. Here's how to use it:
+Docling provides a powerful batch processing utility for efficiently converting multiple documents. The BatchProcessor offers several advanced features:
+
+#### Basic Usage
 
 ```python
 from docling.utils.batch_processor import BatchProcessor
@@ -35,19 +37,81 @@ successful, failed = processor.process_directory(
     export_format="json",     # Export as JSON (or "markdown")
     metadata={"project": "research_papers"}  # Optional metadata
 )
-
-print(f"Successfully processed: {successful} files")
-print(f"Failed to process: {failed} files")
 ```
 
-The batch processor supports:
-- Processing multiple files with a single command
-- Custom file pattern matching (e.g., "*.pdf", "*.docx")
+#### Advanced Features
+
+##### Parallel Processing
+
+Process multiple files concurrently for improved performance:
+
+```python
+processor = BatchProcessor(
+    converter=converter,
+    max_workers=4  # Number of parallel workers
+)
+
+successful, failed = processor.process_directory(
+    input_dir="path/to/input/dir",
+    output_dir="path/to/output/dir",
+    parallel=True  # Enable parallel processing
+)
+```
+
+##### Progress Tracking
+
+Monitor processing progress with custom callbacks:
+
+```python
+def progress_callback(processed: int, total: int):
+    percentage = (processed / total) * 100
+    print(f"Progress: {percentage:.1f}% ({processed}/{total} files)")
+
+processor = BatchProcessor(
+    converter=converter,
+    progress_callback=progress_callback
+)
+```
+
+##### Memory-Efficient Processing
+
+Handle large document sets with batch processing:
+
+```python
+processor = BatchProcessor(
+    converter=converter,
+    batch_size=10  # Process files in batches of 10
+)
+```
+
+##### Error Handling
+
+The batch processor provides robust error handling:
+
+```python
+try:
+    successful, failed = processor.process_directory(
+        input_dir="path/to/input/dir",
+        output_dir="path/to/output/dir"
+    )
+except FileNotFoundError:
+    print("Input directory not found")
+except PermissionError:
+    print("Permission denied accessing directories")
+```
+
+#### Features Summary
+
+- Parallel processing for improved performance
+- Progress tracking with custom callbacks
+- Memory-efficient batch processing
+- Support for multiple file types (PDF, DOCX, etc.)
 - Export to JSON or Markdown formats
 - Custom metadata inclusion
-- Detailed logging of the conversion process
+- Detailed logging and error handling
+- Progress visualization with tqdm
 
-For a complete example, see [batch_processing.py](./examples/batch_processing.py).
+For a complete example with all features, see [batch_processing.py](./examples/batch_processing.py).
 
 ### CLI
 
