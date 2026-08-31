@@ -20,7 +20,10 @@ def convert_local_pdf_to_json(pdf_path, output_filename="output.json"):
     
     try:
         print("Initializing conversion...")
-        result = converter.convert_file(pdf_path)
+        # DocumentConverter has no convert_file() method (only convert() and
+        # convert_all()); convert() already accepts a Path directly, so this
+        # raised AttributeError on every run instead of converting anything.
+        result = converter.convert(pdf_path)
         
         print("Converting to JSON...")
         json_content = result.document.export_to_json()
