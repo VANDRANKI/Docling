@@ -1,8 +1,5 @@
 from docling.document_converter import DocumentConverter
-from docling import document_converter
 from pathlib import Path
-import sys
-import requests
 
 def fetch_and_convert(source_url, output_filename="output.md"):
     converter = DocumentConverter()

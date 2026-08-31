@@ -1,8 +1,5 @@
 from docling.document_converter import DocumentConverter
-from docling import document_converter
 from pathlib import Path
-import sys
-import requests
 import json
 
 def fetch_and_convert_to_json(source_url, output_filename="output.json"):
