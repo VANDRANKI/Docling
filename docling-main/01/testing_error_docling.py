@@ -1,4 +1,6 @@
-from docling import DocumentConverter
+import json
+
+from docling.document_converter import DocumentConverter
 
 source_url = "https://arxiv.org/abs/2302.07732"
 output_filename = "output.json"
