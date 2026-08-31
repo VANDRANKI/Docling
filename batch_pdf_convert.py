@@ -59,12 +59,25 @@ def extract_pdf_to_json(pdf_path, output_path):
 
 def batch_convert_pdfs(input_dir, output_dir):
     """Convert all PDFs in input directory to JSON files"""
+    # Without this check, a typo'd or missing input_dir made Path.glob()
+    # return an empty list, and the function went on to log and print
+    # "Successfully converted: 0, Failed: 0" as if it had genuinely found
+    # zero PDFs to convert, instead of surfacing that the directory itself
+    # was wrong.
+    if not Path(input_dir).is_dir():
+        raise FileNotFoundError(f"Input directory does not exist: {input_dir}")
+
     create_output_directory(output_dir)
-    
-    # Get list of PDF files
-    pdf_files = list(Path(input_dir).glob('*.pdf'))
+
+    # glob('*.pdf') is case-sensitive on Linux/macOS, so a *.PDF file (a
+    # common export from scanners and some journal sites) was silently
+    # skipped there even though the exact same call happens to also match
+    # *.PDF on Windows, where the filesystem is case-insensitive. Matching
+    # both extensions explicitly makes the behavior consistent across
+    # platforms instead of depending on which OS this runs on.
+    pdf_files = sorted(set(Path(input_dir).glob('*.pdf')) | set(Path(input_dir).glob('*.PDF')))
     total_files = len(pdf_files)
-    
+
     logging.info(f"Found {total_files} PDF files to process")
     
     successful = 0
