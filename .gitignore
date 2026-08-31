@@ -2,6 +2,15 @@ model_artifacts/
 scratch/
 ds_convert_models/
 
+# Generated output of pdf_extract.py (this repo's own root-level script,
+# not the vendored docling-main/ package below). extracted_content.json is
+# overwritten every time pdf_extract.py runs, so committing it just adds
+# diff noise on every run. The batch_pdf_convert.py log is the same kind
+# of run artifact. (docling-main/Research_Papers_JSON_Files/ is a
+# deliberately-curated dataset, committed on purpose, and stays tracked.)
+/extracted_content.json
+/pdf_conversion.log
+
 # Created by https://www.toptal.com/developers/gitignore/api/python,macos,virtualenv,pycharm,visualstudiocode,emacs,vim,jupyternotebooks
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,macos,virtualenv,pycharm,visualstudiocode,emacs,vim,jupyternotebooks
 
