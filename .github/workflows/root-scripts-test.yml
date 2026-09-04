@@ -1,0 +1,32 @@
+name: Root scripts test
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "*.py"
+      - ".github/workflows/root-scripts-test.yml"
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - "*.py"
+      - ".github/workflows/root-scripts-test.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pdfminer.six
+      - name: Test root-level scripts
+        run: pytest test_batch_pdf_convert.py -v
