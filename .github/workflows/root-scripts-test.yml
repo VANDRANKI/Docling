@@ -29,4 +29,4 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest pdfminer.six
       - name: Test root-level scripts
-        run: pytest test_batch_pdf_convert.py -v
+        run: pytest test_batch_pdf_convert.py test_pdf_extract.py -v
